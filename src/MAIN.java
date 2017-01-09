@@ -71,15 +71,16 @@ public class MAIN {
 	//	simp_obj.looplist(input, 2);
 	//	simp_obj.maxsubstring("amazon mobile");
 	//	simp_obj.max_secondmax(input);
-		simp_obj.minmax(input);
+	//	simp_obj.minmax(input);
+		simp_obj.reorder(input);
 		
-		Solution leecode = new Solution();
+	//	Solution leecode = new Solution();
 		//leecode.test("twoSum");
 		//leecode.test("threeSum");
 		//leecode.test("hammingDistance");
 		//leecode.test("insert_sort"));
 		//leecode.test("largestPalindrome");
-		leecode.test("removeDuplicates");
+	//	leecode.test("removeDuplicates");
 
 		
 		//Order order=new Order();

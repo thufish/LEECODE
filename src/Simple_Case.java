@@ -177,18 +177,25 @@ public class Simple_Case {
 	 */
 	public void reorder(int[] input) {
 		int j = 0;
-		for (int i = input.length; i > j; i--) {
+		for (int i = input.length-1; i > 0; i--) {
 			if (input[i] == 0) {
-				// switch
-				for (j = 0; j < i; j++) {
-					// switch
+				// find the 1st not 0,begin to move
+				for (j = 0; j < input.length; j++) {
+					// find the 1st not zero one
 					if (input[j] != 0) {
-						input[i] = input[j];
-						input[j] = 0;
+						for(int k=input.length-1;k>j;k--)
+						{
+							input[k]=input[k-1];
+						}
 						break;
 					}
 				}
+				input[j] = 0;
 			}
+		}
+		for(int x:input)
+		{
+			System.out.print(x+",");
 		}
 	}
 
