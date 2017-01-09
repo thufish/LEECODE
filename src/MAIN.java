@@ -67,10 +67,11 @@ public class MAIN {
 	public static void main(String[] args) {
 		System.out.println("Practice makes perfect!!");
 		Simple_Case simp_obj = new Simple_Case();
-		int[] input={1,2,3,4,5,6,7};
+		int[] input={0,3,0,2,1,0,0};
 	//	simp_obj.looplist(input, 2);
 	//	simp_obj.maxsubstring("amazon mobile");
-		simp_obj.max_secondmax(input);
+	//	simp_obj.max_secondmax(input);
+		simp_obj.minmax(input);
 		
 		Solution leecode = new Solution();
 		//leecode.test("twoSum");

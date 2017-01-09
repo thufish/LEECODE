@@ -99,52 +99,97 @@ public class Simple_Case {
 		}
 
 	}
-	
+
 	public void maxsubstring(String input) {
 		System.out.println();
-		String output=new String();
-	
-		int pivot=0;
-		//System.out.println();
-		while(pivot++<input.length()){	
-			int max=0;
-			for(int i=pivot;i<input.length();i++){			 
-			if(input.charAt(i)>max){
-			  max=input.charAt(i);
-			  pivot=i;
+		String output = new String();
+
+		int pivot = 0;
+		// System.out.println();
+		while (pivot++ < input.length()) {
+			int max = 0;
+			for (int i = pivot; i < input.length(); i++) {
+				if (input.charAt(i) > max) {
+					max = input.charAt(i);
+					pivot = i;
+				}
 			}
+
+			output += (char) max;
 		}
-		
-		output+=(char)max;
-		}
-		
+
 		System.out.println(output);
 	}
 
-	public int[] max_secondmax(int[] input ){
-		int output[]=new int[2];
-		int max_value=input[0];
-		int second_value=input[0];
-		if(input.length<=2){
-			output=input;
-		}
-		else{
-			for(int i=0;i<input.length;i++){
-				if(input[i]>max_value)
-				{
-					max_value=input[i];
+	/**
+	 * 1、快速找出一个数组中的最大数、第二大数。
+	 * 
+	 * @param input
+	 * @return
+	 */
+	public int[] max_secondmax(int[] input) {
+		int output[] = new int[2];
+		int max_value = input[0];
+		int second_value = input[0];
+		if (input.length <= 2) {
+			output = input;
+		} else {
+			for (int i = 0; i < input.length; i++) {
+				if (input[i] > max_value) {
+					max_value = input[i];
 				}
 			}
-			
-			for(int i=0;i<input.length;i++){
-				if(input[i]>second_value &&input[i]!= max_value){
-					second_value=input[i];
+
+			for (int i = 0; i < input.length; i++) {
+				if (input[i] > second_value && input[i] != max_value) {
+					second_value = input[i];
 				}
 			}
 		}
-		System.out.print(max_value+","+second_value);
+		System.out.print(max_value + "," + second_value);
 		return output;
-		
+	}
+
+	/**
+	 * 2、试着用最小的比较次数去寻找数组中的最大值和最小值。
+	 * 
+	 * @param input
+	 */
+	public void minmax(int[] input) {
+		int min = input[0];
+		int max = input[0];
+		for (int i = 0; i < input.length; i++) {
+			if (input[i] > max) {
+				max = input[i];
+			} else {
+				min = input[i];
+			}
+
+		}
+		System.out.print(max + "," + min);
+
+	}
+
+	/**
+	 * 3、重排问题 给定含有n个元素的整型数组a，其中包括0元素和非0元素，对数组进行排序，要求：
+	 * 1、排序后所有0元素在前，所有非零元素在后，且非零元素排序前后相对位置不变 2、不能使用额外存储空间 例子如下 输入 0、3、0、2、1、0、0
+	 * 输出 0、0、0、0、3、2、1
+	 */
+	public void reorder(int[] input) {
+		int j = 0;
+		for (int i = input.length; i > j; i--) {
+			if (input[i] == 0) {
+				// switch
+				for (j = 0; j < i; j++) {
+					// switch
+					if (input[j] != 0) {
+						input[i] = input[j];
+						input[j] = 0;
+						break;
+					}
+				}
+			}
+		}
 	}
 
 }
