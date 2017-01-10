@@ -67,7 +67,7 @@ public class MAIN {
 	public static void main(String[] args) {
 		System.out.println("Practice makes perfect!!");
 		Simple_Case simp_obj = new Simple_Case();
-		int[] input={0,3,0,2,1,0,0};
+		int[] input={0,3,4,0,2,0,1,0,5,0};
 	//	simp_obj.looplist(input, 2);
 	//	simp_obj.maxsubstring("amazon mobile");
 	//	simp_obj.max_secondmax(input);

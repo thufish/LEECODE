@@ -176,21 +176,19 @@ public class Simple_Case {
 	 * 输出 0、0、0、0、3、2、1
 	 */
 	public void reorder(int[] input) {
-		int j = 0;
 		for (int i = input.length-1; i > 0; i--) {
 			if (input[i] == 0) {
-				// find the 1st not 0,begin to move
-				for (j = 0; j < input.length; j++) {
+				// find the 1st not 0,from the end ,begin to change with the latest 0
+				for (int j = i-1; j >0; j--) {
 					// find the 1st not zero one
 					if (input[j] != 0) {
-						for(int k=input.length-1;k>j;k--)
-						{
-							input[k]=input[k-1];
-						}
+						//switch
+						input[i]=input[j];
+						input[j] = 0;
 						break;
 					}
 				}
-				input[j] = 0;
+				
 			}
 		}
 		for(int x:input)
